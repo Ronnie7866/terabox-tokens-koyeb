@@ -76,10 +76,7 @@ async def extract_tokens(request: TokenRequest):
     logid = find_between(text, "dp-logid=", "&")
     jstoken = find_between(text, "fn%28%22", "%22%29")
     
-    if not all([thumbnail, logid, jstoken]):
-        raise HTTPException(status_code=404, detail="Could not extract tokens")
-    
-    return TokenResponse(dplogid=logid, thumbnail=thumbnail, jstoken=jstoken)
+    return TokenResponse(dplogid=logid, default_thumbnail=thumbnail, jstoken=jstoken)
 
 @app.get("/")
 async def root():
