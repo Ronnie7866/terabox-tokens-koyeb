@@ -52,7 +52,7 @@ async def extract_tokens(request: TokenRequest):
     if not surl:
         raise HTTPException(status_code=400, detail="Invalid TeraBox URL")
     
-    safe_url = f"https://dm.1024tera.com/wap/share/filelist?surl={surl}"
+    safe_url = f"https://www.terabox.app/wap/share/filelist?surl={surl}"
     
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
